@@ -96,7 +96,6 @@ header {
   justify-content: center;
   align-items: center;
   padding: 10px 31px 60px 36px;
-  overflow: hidden;
 }
 
 .header-info {
@@ -122,6 +121,12 @@ header {
   font-size: 22px;
   line-height: 1.4;
   margin-top: 20px;
+  transform: translateX(-100%);
+  animation: slideX 1s ease-in-out forwards;
+}
+.header-info h1, .header-info h2 {
+  transform: translateY(-100%);
+  animation: slideY 1s ease-in-out forwards;
 }
 .header-info button {
   border-radius: 20px;
@@ -132,6 +137,12 @@ header {
   font-size: 22px;
   line-height: inherit;
   margin-top: 20px;
+  opacity: 0;
+  transition: background 200ms ease-in;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+.header-info button:hover {
+  background: #EE9972;
 }
 
 .header-img {
@@ -144,9 +155,45 @@ header {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 20px;
-  transform: translateY(35%);
+  transform: translateY(-100%);
 }
 
+.header-img.active img {
+  animation: imgAnimation 2s ease-in-out forwards;
+}
+
+@keyframes imgAnimation {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(35%);
+  }
+}
+@keyframes slideY {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideX {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @media screen and (max-width: 839px) {
   nav {
     flex-direction: column;
@@ -206,19 +253,6 @@ header {
     padding: 0 36px;
     margin-right: 0;
   }
-  .header-info h1, .header-info h2 {
-    transform: translateY(-100%);
-  }
-  .header-info p {
-    transform: translateX(-100%);
-  }
-  .header-info button {
-    opacity: 0;
-    transition: background 200ms ease-in;
-  }
-  .header-info button:hover {
-    background: #EE9972;
-  }
   .header-img {
     margin-top: 20px;
     max-width: none;
@@ -226,40 +260,18 @@ header {
     max-height: 392px;
   }
   .header-img img {
-    transform: translateY(0);
+    transform: translateY(0) scale(0) rotate(0);
     border-radius: 0;
   }
-  h1, h2 {
-    animation: slideY 1s ease-in-out forwards;
+  .header-img.active img {
+    animation: imgAnimationResponsive 2s ease-in-out forwards;
   }
-  p {
-    animation: slideX 1s ease-in-out forwards;
-  }
-  button {
-    animation: fadeIn 2s ease-in-out forwards;
-  }
-  @keyframes slideY {
+  @keyframes imgAnimationResponsive {
     0% {
-      transform: translateY(-100%);
+      transform: translateY(0) scale(0) rotate(0);
     }
     100% {
-      transform: translateY(0);
-    }
-  }
-  @keyframes slideX {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
+      transform: translateY(0) scale(1) rotate(360deg);
     }
   }
 }

@@ -1,7 +1,30 @@
-import React from 'react';
+import React , {useRef , useEffect , useState} from 'react';
 import hero from './restauranfood-min.jpg';
 import { Link } from 'react-router-dom';
 function Header() {
+	const headerImg = useRef();
+	const [hasIntersected , setHasIntersected] = useState(false);
+	useEffect(()=>{
+		if(!hasIntersected){
+			const observer = new IntersectionObserver(entry => {
+				console.log(entry);
+				if(entry[0].isIntersecting){
+					headerImg.current.classList.add('active');
+					setHasIntersected(!hasIntersected);
+				}
+			}, {threshold : 0.5});
+			observer.observe(headerImg.current);
+
+			return ()=> {
+				if (headerImg.current && observer) {
+					observer.unobserve(headerImg.current);
+				  }
+			}
+		}
+
+
+
+	} , [hasIntersected])
 	return (
 		<header>
 			<div className="header-info">
@@ -26,7 +49,7 @@ function Header() {
 				</Link>
 			</div>
 
-			<div className="header-img">
+			<div ref = {headerImg} className="header-img">
 				<img src={hero} alt="restaurant food" />
 			</div>
 		</header>

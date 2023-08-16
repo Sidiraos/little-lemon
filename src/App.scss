@@ -51,76 +51,9 @@ a {
 // queries
 @media screen and (max-width: 839px) {
     @import './components/Nav/NavResponsive_md';
-    header {
-        flex-direction: column;
-        padding:0;
-        padding-top: 15px;
-    }
-    .header-info {
-        padding: 0 36px;
-        margin-right: 0;
-        h1 , h2 {
-            transform: translateY(-100%);
-        }
-        p {
-            transform: translateX(-100%);
-        }
-        button {
-            opacity: 0;
-            transition: background 200ms ease-in;
-            &:hover {
-                background: $secondaryColor1;
-            }
-        }
-
-    }
-    .header-img {
-        margin-top: 20px;
-        max-width: none;
-        width: 100%;
-        max-height: 392px;
-        img {
-            transform: translateY(0);
-            border-radius: 0;
-        }
-    }
-    // responsive header animations
-    h1, h2 {
-        animation : slideY 1s ease-in-out forwards;
-    }
-    p {
-        animation: slideX 1s ease-in-out forwards;
-    }
-    button {
-        animation: fadeIn 2s ease-in-out forwards;
-    }
-    @keyframes slideY {
-        0%{
-            transform: translateY(-100%);
-        }
-        100% {
-            transform: translateY(0);
-        }
-    }
-    @keyframes slideX {
-        0% {
-            transform: translateX(-100%);
-        }
-        100% {
-            transform: translateX(0);
-        }
-    }
-    @keyframes fadeIn {
-        0%{
-            opacity: 0;
-        }
-        100%{
-            opacity: 1;
-        }
-    }
-
-
+    @import './components/Header/Header-md-responsive';
 }
+
 @media screen and (max-width : 350px) {
     @import './components/Nav/NavResponsive_xs';
 

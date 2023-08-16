@@ -1,0 +1,33 @@
+header {
+    flex-direction: column;
+    padding:0;
+    padding-top: 15px;
+}
+.header-info {
+    padding: 0 36px;
+    margin-right: 0;
+}
+.header-img {
+    margin-top: 20px;
+    max-width: none;
+    width: 100%;
+    max-height: 392px;
+    img {
+        transform: translateY(0) scale(0) rotate(0);
+        // animation : imgAnimation  2s ease-in-out forwards;
+        border-radius: 0;
+    }
+}
+.header-img.active img {
+    animation : imgAnimationResponsive 2s ease-in-out forwards;
+}
+// responsive header animations
+
+@keyframes imgAnimationResponsive {
+    0% {
+        transform: translateY(0) scale(0) rotate(0);
+    }
+    100% {
+        transform: translateY(0) scale(1) rotate(360deg);
+    }
+}
