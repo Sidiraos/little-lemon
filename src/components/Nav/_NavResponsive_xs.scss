@@ -1,0 +1,16 @@
+nav {
+    div.nav-brand {
+        img {
+        width: 100%;
+            
+        }
+        align-items: center;
+    }
+}
+.nav-btn {
+    width: 40px;
+    height: 36px;
+}
+.nav-icon , .nav-icon::before , .nav-icon::after {
+    width: 15px;
+}

@@ -1,0 +1,280 @@
+@import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@500&family=Open+Sans:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 300ms ease-in;
+}
+a:hover {
+  color: #495E57;
+}
+
+nav {
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  justify-content: space-between;
+  background-color: #EDEFEE;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  position: sticky;
+  z-index: 10000;
+  top: 0;
+  width: 100%;
+}
+nav div.nav-brand img {
+  width: 200px;
+}
+nav ul.navbar-nav {
+  display: flex;
+  flex-flow: row nowrap;
+  list-style-type: none;
+}
+nav ul.navbar-nav li.nav-item {
+  font-size: 1.3em;
+  margin-left: 30px;
+  font-family: "Markazi Text", serif;
+  font-size: 25px;
+  line-height: inherit;
+}
+
+.nav-btn {
+  display: none;
+  background-color: #EDEFEE;
+  width: 60px;
+  height: 60px;
+  border: 1px solid rgba(0, 0, 0, 0.206);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.nav-icon {
+  position: relative;
+  width: 30px;
+  height: 2px;
+  background: #333;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s;
+}
+
+.nav-icon::before,
+.nav-icon::after {
+  content: "";
+  width: 30px;
+  height: 2px;
+  background: #333;
+  position: absolute;
+  transition: all 0.2s;
+}
+
+.nav-icon::before {
+  transform: translateY(-10px);
+}
+
+.nav-icon::after {
+  transform: translateY(10px);
+}
+
+header {
+  background-color: #495E57;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 31px 60px 36px;
+  overflow: hidden;
+}
+
+.header-info {
+  flex-basis: 100%;
+  max-width: 800px;
+  margin-right: 20px;
+}
+.header-info h1 {
+  color: #F4CE14;
+  font-family: "Markazi Text", serif;
+  font-size: clamp(40px, 10vw, 80px);
+  line-height: inherit;
+}
+.header-info h2 {
+  color: #EDEFEE;
+  font-family: "Markazi Text", serif;
+  font-size: clamp(30px, 5vw, 50px);
+  line-height: inherit;
+}
+.header-info p {
+  color: #EDEFEE;
+  font-family: "Markazi Text", serif;
+  font-size: 22px;
+  line-height: 1.4;
+  margin-top: 20px;
+}
+.header-info button {
+  border-radius: 20px;
+  background: #F4CE14;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-family: "Markazi Text", serif;
+  font-size: 22px;
+  line-height: inherit;
+  margin-top: 20px;
+}
+
+.header-img {
+  flex-basis: 100%;
+  max-width: 500px;
+}
+.header-img img {
+  width: 100%;
+  height: 540px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+  transform: translateY(35%);
+}
+
+@media screen and (max-width: 839px) {
+  nav {
+    flex-direction: column;
+    align-items: baseline;
+    padding: 0;
+    border: none;
+  }
+  nav > div {
+    width: 100%;
+    padding: 15px;
+  }
+  nav .nav-btn {
+    display: flex;
+  }
+  div.nav-brand {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+  }
+  div.nav-brand + div {
+    position: absolute;
+    bottom: -211px;
+    opacity: 0;
+    color: #EDEFEE;
+  }
+  div.nav-brand + div.active {
+    transition: opacity 0.3s ease-in-out, background 0.3s ease-in;
+    opacity: 1;
+    background: #333333;
+  }
+  div > ul.navbar-nav {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav-btn.active {
+    background-color: #c3073f;
+  }
+  .nav-icon.active {
+    background: transparent;
+  }
+  .nav-icon.active::before, .nav-icon.active::after {
+    background: #fff;
+  }
+  .nav-icon.active::before {
+    transform: translateY(0) rotate(135deg);
+  }
+  .nav-icon.active::after {
+    transform: translateY(0) rotate(-135deg);
+  }
+  header {
+    flex-direction: column;
+    padding: 0;
+    padding-top: 15px;
+  }
+  .header-info {
+    padding: 0 36px;
+    margin-right: 0;
+  }
+  .header-info h1, .header-info h2 {
+    transform: translateY(-100%);
+  }
+  .header-info p {
+    transform: translateX(-100%);
+  }
+  .header-info button {
+    opacity: 0;
+    transition: background 200ms ease-in;
+  }
+  .header-info button:hover {
+    background: #EE9972;
+  }
+  .header-img {
+    margin-top: 20px;
+    max-width: none;
+    width: 100%;
+    max-height: 392px;
+  }
+  .header-img img {
+    transform: translateY(0);
+    border-radius: 0;
+  }
+  h1, h2 {
+    animation: slideY 1s ease-in-out forwards;
+  }
+  p {
+    animation: slideX 1s ease-in-out forwards;
+  }
+  button {
+    animation: fadeIn 2s ease-in-out forwards;
+  }
+  @keyframes slideY {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes slideX {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+@media screen and (max-width: 350px) {
+  nav div.nav-brand {
+    align-items: center;
+  }
+  nav div.nav-brand img {
+    width: 100%;
+  }
+  .nav-btn {
+    width: 40px;
+    height: 36px;
+  }
+  .nav-icon, .nav-icon::before, .nav-icon::after {
+    width: 15px;
+  }
+}/*# sourceMappingURL=App.css.map */

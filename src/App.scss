@@ -1,0 +1,127 @@
+// variables sass
+// colors
+$primaryColor1 : #495E57;
+$primaryColor2 : #F4CE14;
+$secondaryColor1 : #EE9972;
+$secondaryColor2 : #FBDABB;
+$highlightColor1 : #EDEFEE;
+$highlightColor2 : #333333;
+// font family
+
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@500&family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
+// for lead text (for descriptive items to catch attention !  exp CTA , home page) and card title , nav item
+$fontTitle : 'Markazi Text', serif;
+// for p max 65 char per line and line-height 1.5 , highlight like price
+$fontParagraphStyle :'Karla', sans-serif;
+
+@mixin font ($font , $size , $height) {
+ font-family: $font;
+ font-size: $size;
+ line-height: $height;
+};
+
+@mixin button (){
+    border-radius: 20px;
+    background: $primaryColor2;
+    cursor: pointer;
+    padding: 10px 15px;
+    @include font($fontTitle, 22px , inherit);
+}
+
+*, ::before , ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 300ms ease-in;
+    &:hover {
+        color : $primaryColor1;
+    }
+}
+// import
+@import './components/Nav/Nav';
+@import './components/Header/Header';
+
+// queries
+@media screen and (max-width: 839px) {
+    @import './components/Nav/NavResponsive_md';
+    header {
+        flex-direction: column;
+        padding:0;
+        padding-top: 15px;
+    }
+    .header-info {
+        padding: 0 36px;
+        margin-right: 0;
+        h1 , h2 {
+            transform: translateY(-100%);
+        }
+        p {
+            transform: translateX(-100%);
+        }
+        button {
+            opacity: 0;
+            transition: background 200ms ease-in;
+            &:hover {
+                background: $secondaryColor1;
+            }
+        }
+
+    }
+    .header-img {
+        margin-top: 20px;
+        max-width: none;
+        width: 100%;
+        max-height: 392px;
+        img {
+            transform: translateY(0);
+            border-radius: 0;
+        }
+    }
+    // responsive header animations
+    h1, h2 {
+        animation : slideY 1s ease-in-out forwards;
+    }
+    p {
+        animation: slideX 1s ease-in-out forwards;
+    }
+    button {
+        animation: fadeIn 2s ease-in-out forwards;
+    }
+    @keyframes slideY {
+        0%{
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    @keyframes slideX {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+    @keyframes fadeIn {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
+
+}
+@media screen and (max-width : 350px) {
+    @import './components/Nav/NavResponsive_xs';
+
+}

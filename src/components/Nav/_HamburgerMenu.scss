@@ -1,0 +1,43 @@
+.nav-btn {
+    display: none;
+    background-color: $highlightColor1;
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(0, 0, 0, 0.206);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease-in-out;
+    border-radius: 10px;
+
+
+
+}
+.nav-icon {
+    position: relative;
+    width: 30px;
+    height: 2px;
+    background: #333;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s;
+
+
+}
+.nav-icon::before , 
+.nav-icon::after {
+    content : "";
+    width : 30px ;
+    height: 2px;
+    background: #333;
+    position: absolute; 
+    transition: all 0.2s;
+
+}
+.nav-icon::before {
+    transform : translateY(-10px);
+}
+.nav-icon::after {
+    transform: translateY(10px);
+}

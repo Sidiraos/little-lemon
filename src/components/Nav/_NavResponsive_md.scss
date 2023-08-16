@@ -1,0 +1,58 @@
+// <774px !!!!!!!!!!
+nav {
+    flex-direction: column;
+    align-items: baseline;
+    padding: 0;
+    border: none;
+    > div {
+        width: 100%;
+        padding:15px;
+    }
+    .nav-btn {
+        display:flex;
+
+    }
+}
+div.nav-brand {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    + div {
+        // display: none;
+        position: absolute;
+        bottom: -211px;
+        opacity: 0;
+        color : $highlightColor1 ;
+
+    }
+    + div.active {
+        // display: block;
+        transition: opacity 0.3s ease-in-out , background 0.3s ease-in;
+        opacity: 1;
+        background: $highlightColor2;
+
+    }
+}
+
+div > ul.navbar-nav {
+    // display: none;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nav-btn.active {
+    background-color: #c3073f;
+}
+.nav-icon.active {
+    background: transparent;
+}
+.nav-icon.active::before , .nav-icon.active::after {
+    background: #fff;
+}
+.nav-icon.active::before {
+    transform: translateY(0) rotate(135deg);
+}
+.nav-icon.active::after {
+    transform: translateY(0) rotate(-135deg);
+}
