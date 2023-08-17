@@ -15,7 +15,7 @@ function Nav() {
 	const itemsNav = navItem.map((item, index) => {
 		return (
 			<li className="nav-item" key={index}>
-				<Link to={`/${item}`}>{item}</Link>
+				<Link className='nav-link' to={`/${item}`}>{item}</Link>
 			</li>
 		);
 	});

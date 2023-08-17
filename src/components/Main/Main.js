@@ -1,9 +1,12 @@
-import React from 'react'
-
+import React from 'react';
+import Section from './Section';
+import Button from '../Header/Button';
 function Main() {
-  return (
-    <div>Main</div>
-  )
+	return (
+		<main>
+			<Section />
+		</main>
+	);
 }
 
-export default Main
+export default Main;

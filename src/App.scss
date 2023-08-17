@@ -29,7 +29,7 @@ $fontParagraphStyle :'Karla', sans-serif;
     padding: 10px 15px;
     @include font($fontTitle, 22px , inherit);
 }
-
+// global item
 *, ::before , ::after{
     box-sizing: border-box;
     margin: 0;
@@ -39,14 +39,23 @@ $fontParagraphStyle :'Karla', sans-serif;
 a {
     text-decoration: none;
     color: inherit;
-    transition: color 300ms ease-in;
-    &:hover {
-        color : $primaryColor1;
-    }
 }
-// import
+
+.primary-btn {
+    @include button();
+    margin-top: 20px;
+    opacity: 0;
+    transition: background 200ms ease-in;
+    animation: fadeIn 2s ease-in-out forwards;
+
+    &:hover {
+        background: $secondaryColor1;
+    }
+ }
+// scss files
 @import './components/Nav/Nav';
 @import './components/Header/Header';
+@import './components/Main/main';
 
 // queries
 @media screen and (max-width: 839px) {

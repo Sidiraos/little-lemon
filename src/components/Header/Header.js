@@ -1,6 +1,7 @@
 import React , {useRef , useEffect , useState} from 'react';
 import hero from './restauranfood-min.jpg';
 import { Link } from 'react-router-dom';
+import Button from './Button';
 function Header() {
 	const headerImg = useRef();
 	const [hasIntersected , setHasIntersected] = useState(false);
@@ -44,13 +45,15 @@ function Header() {
 					in sint tenetur accusamus commodi optio obcaecati? Velit
 					dolores doloribus, nam quae necessitatibus magni hic?
 				</p>
-				<Link to="/reservations">
-					<button type="button">Reserve a table</button>
-				</Link>
+				<Button link = "/reservations">
+					Reserve a table
+				</Button>
+
 			</div>
 
 			<div ref = {headerImg} className="header-img">
 				<img src={hero} alt="restaurant food" />
+				<Button link="/onlinemenu">Online Menu</Button>
 			</div>
 		</header>
 	);

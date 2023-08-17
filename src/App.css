@@ -10,10 +10,23 @@
 a {
   text-decoration: none;
   color: inherit;
-  transition: color 300ms ease-in;
 }
-a:hover {
-  color: #495E57;
+
+.primary-btn {
+  border-radius: 20px;
+  background: #F4CE14;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-family: "Markazi Text", serif;
+  font-size: 22px;
+  line-height: inherit;
+  margin-top: 20px;
+  opacity: 0;
+  transition: background 200ms ease-in;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+.primary-btn:hover {
+  background: #EE9972;
 }
 
 nav {
@@ -45,6 +58,13 @@ nav ul.navbar-nav li.nav-item {
   font-family: "Markazi Text", serif;
   font-size: 25px;
   line-height: inherit;
+}
+
+.nav-link {
+  transition: color 300ms ease-in;
+}
+.nav-link:hover {
+  color: #495E57;
 }
 
 .nav-btn {
@@ -96,6 +116,9 @@ header {
   justify-content: center;
   align-items: center;
   padding: 10px 31px 60px 36px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .header-info {
@@ -128,26 +151,11 @@ header {
   transform: translateY(-100%);
   animation: slideY 1s ease-in-out forwards;
 }
-.header-info button {
-  border-radius: 20px;
-  background: #F4CE14;
-  cursor: pointer;
-  padding: 10px 15px;
-  font-family: "Markazi Text", serif;
-  font-size: 22px;
-  line-height: inherit;
-  margin-top: 20px;
-  opacity: 0;
-  transition: background 200ms ease-in;
-  animation: fadeIn 2s ease-in-out forwards;
-}
-.header-info button:hover {
-  background: #EE9972;
-}
 
 .header-img {
   flex-basis: 100%;
   max-width: 500px;
+  position: relative;
 }
 .header-img img {
   width: 100%;
@@ -156,6 +164,12 @@ header {
      object-fit: cover;
   border-radius: 20px;
   transform: translateY(-100%);
+}
+.header-img button {
+  position: absolute;
+  top: 128%;
+  right: 50%;
+  transform: translate(50%, 50%);
 }
 
 .header-img.active img {
@@ -194,6 +208,10 @@ header {
     opacity: 1;
   }
 }
+main button {
+  transform: translateX(79%);
+}
+
 @media screen and (max-width: 839px) {
   nav {
     flex-direction: column;

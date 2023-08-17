@@ -30,5 +30,11 @@ nav {
     }
 
 }
+.nav-link {
+    transition: color 300ms ease-in;
+    &:hover {
+        color : $primaryColor1;
+    }
+}
 @import './HamburgerMenu.scss';
 
