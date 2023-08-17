@@ -259,6 +259,8 @@ section {
   max-height: 300px;
   overflow: auto;
   overflow-x: hidden;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 .card-body-title {
   display: flex;
@@ -281,6 +283,9 @@ section {
   line-height: 1.4;
   margin-top: 10px;
   overflow-wrap: break-word;
+}
+.card-body::-webkit-scrollbar {
+  display: none;
 }
 .card-footer {
   margin-top: auto;

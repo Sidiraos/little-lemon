@@ -32,6 +32,8 @@ section {
         max-height: 300px;
         overflow: auto;
         overflow-x: hidden;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
 		&-title {
 			display: flex;
 			justify-content: space-between;
@@ -50,7 +52,11 @@ section {
             margin-top: 10px;
             overflow-wrap: break-word;
         }
+
 	}
+    &-body::-webkit-scrollbar{
+        display: none;
+    }
 	&-footer {
         // position: absolute;
         // bottom: 0;
