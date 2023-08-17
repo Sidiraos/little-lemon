@@ -1,14 +1,14 @@
 section.section1 {
 	padding-top: 200px;
-    padding-bottom: 20px;
-    padding-left: clamp(10px , 5vw, 15px);
-    padding-right: clamp(10px , 5vw, 15px);
-    max-width: 900px;
-    margin: auto;
-    h1 {
-        @include font($fontTitle , clamp(40px , 10vw , 80px) , inherit);
-    }
-	div.container{
+	padding-bottom: 20px;
+	padding-left: clamp(10px, 5vw, 15px);
+	padding-right: clamp(10px, 5vw, 15px);
+	max-width: 900px;
+	margin: auto;
+	h1 {
+		@include font($fontTitle, clamp(40px, 10vw, 80px), inherit);
+	}
+	div.container {
 		display: flex;
 		justify-content: center;
 		gap: 20px;
@@ -18,15 +18,16 @@ section.section1 {
 	width: 349px;
 	height: 600px;
 
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 	background: $highlightColor1;
 	border-radius: 19px 19px 0px 0px;
-    position: relative;
-    overflow: auto;
+	position: relative;
+	overflow: auto;
 
 	&-img {
 		height: 200px;
+		min-height: 200px;
 		border-radius: inherit;
 		img {
 			width: 100%;
@@ -35,16 +36,7 @@ section.section1 {
 			border-radius: inherit;
 		}
 	}
-	&-body,
-	&-footer {
-		padding: 20px;
-	}
-	&-body {
-        max-height: 300px;
-        overflow: auto;
-        overflow-x: hidden;
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
+	&-header {
 		&-title {
 			display: flex;
 			justify-content: space-between;
@@ -58,35 +50,46 @@ section.section1 {
 				}
 			}
 		}
-        &-description {
-            @include font($fontParagraphStyle, 18px, 1.4);
-            margin-top: 10px;
-            overflow-wrap: break-word;
-        }
-
 	}
-    &-body::-webkit-scrollbar{
-        display: none;
-    }
+	&-body,
+	&-header,
 	&-footer {
-        // position: absolute;
-        // bottom: 0;
-        // width: 100%;
-        margin-top: auto;
-        display: flex;
-        justify-content: space-between;
-        button {
-            padding: 10px 10px;
-            border: none;
-            border-radius: 5px;
-            background: $secondaryColor1;
-            cursor: pointer;
-            @include font($fontTitle , 20px , inherit);
-            transition: background 200ms ease-in;
-            &:hover {
-                background: $primaryColor2;
-            }
-        }
+		padding: 20px;
+	}
+	&-body {
+		max-height: 300px;
+		overflow: auto;
+		overflow-x: hidden;
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+		&-description {
+			@include font($fontParagraphStyle, 18px, 1.4);
+			margin-top: 10px;
+			overflow-wrap: break-word;
+		}
+	}
+	&-body::-webkit-scrollbar {
+		display: none;
+	}
+	&-footer {
+		// position: absolute;
+		// bottom: 0;
+		// width: 100%;
+		margin-top: auto;
+		display: flex;
+		justify-content: space-between;
+		button {
+			padding: 10px 10px;
+			border: none;
+			border-radius: 5px;
+			background: $secondaryColor1;
+			cursor: pointer;
+			@include font($fontTitle, 20px, inherit);
+			transition: background 200ms ease-in;
+			&:hover {
+				background: $primaryColor2;
+			}
+		}
 		&-logo {
 			width: 30px;
 		}

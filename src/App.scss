@@ -16,6 +16,10 @@ $fontTitle: 'Markazi Text', serif;
 // for p max 65 char per line and line-height 1.5 , highlight like price
 $fontParagraphStyle: 'Karla', sans-serif;
 
+// mixin and extension
+%section2 {
+    background-image: radial-gradient(circle, #f4ce14, #d4862c, #984e34, #4f2627, #000000);
+}
 @mixin font($font, $size, $height) {
 	font-family: $font;
 	font-size: $size;

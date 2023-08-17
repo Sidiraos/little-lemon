@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@500&family=Open+Sans:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+section.section2 {
+  background-image: radial-gradient(circle, #f4ce14, #d4862c, #984e34, #4f2627, #000000);
+}
+
 *,
 ::before,
 ::after {
@@ -242,6 +246,7 @@ section.section1 div.container {
 }
 .card-img {
   height: 200px;
+  min-height: 200px;
   border-radius: inherit;
 }
 .card-img img {
@@ -251,7 +256,22 @@ section.section1 div.container {
      object-fit: cover;
   border-radius: inherit;
 }
-.card-body, .card-footer {
+.card-header-title {
+  display: flex;
+  justify-content: space-between;
+}
+.card-header-title span:nth-child(1) {
+  font-family: "Markazi Text", serif;
+  font-size: 20px;
+  line-height: inherit;
+}
+.card-header-title span:nth-child(2) {
+  font-family: "Karla", sans-serif;
+  font-size: 18px;
+  line-height: inherit;
+  color: #ee9972;
+}
+.card-body, .card-header, .card-footer {
   padding: 20px;
 }
 .card-body {
@@ -260,21 +280,6 @@ section.section1 div.container {
   overflow-x: hidden;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-}
-.card-body-title {
-  display: flex;
-  justify-content: space-between;
-}
-.card-body-title span:nth-child(1) {
-  font-family: "Markazi Text", serif;
-  font-size: 20px;
-  line-height: inherit;
-}
-.card-body-title span:nth-child(2) {
-  font-family: "Karla", sans-serif;
-  font-size: 18px;
-  line-height: inherit;
-  color: #ee9972;
 }
 .card-body-description {
   font-family: "Karla", sans-serif;
@@ -311,7 +316,6 @@ section.section1 div.container {
 
 section.section2 {
   min-height: 400px;
-  background: #f4ce14;
   text-align: center;
   padding: 20px 30px;
 }
@@ -337,28 +341,31 @@ section.section2 .card {
 section.section2 .card-img {
   width: 134.75px;
   height: 134.75px;
+  min-height: 134.75px;
 }
 section.section2 .card-img img {
   border-radius: 134.75px;
 }
-section.section2 .card-body {
+section.section2 .card-info {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  max-height: 400px;
 }
-section.section2 .card-body-name {
+section.section2 .card-info-name {
   font-family: "Markazi Text", serif;
   font-size: 18px;
   line-height: inherit;
 }
-section.section2 .card-body-name + p {
+section.section2 .card-info-name + p {
   font-weight: 200;
   text-align: center;
 }
-section.section2 .card-body-rating svg {
+section.section2 .card-info-rating svg {
   width: 20.367px;
   height: 20.367px;
+}
+section.section2 .card-body {
+  max-height: 400px;
 }
 section.section2 .card-body-description {
   font-family: "Karla", sans-serif;

@@ -1,6 +1,6 @@
 section.section2 {
 	min-height: 400px;
-	background: $primaryColor2;
+	@extend %section2;
 	text-align: center;
 	padding: 20px 30px;
     .container {
@@ -24,15 +24,15 @@ section.section2 {
 		&-img {
 			width: 134.75px;
 			height: 134.75px;
+            min-height: 134.75px;
 			img {
 				border-radius: 134.75px;
 			}
 		}
-		&-body {
+        &-info {
             display: flex;
             flex-direction: column;
             gap: 14px;
-            max-height: 400px;
             &-name {
                 @include font($fontTitle , 18px , inherit);
                 + p {
@@ -48,6 +48,10 @@ section.section2 {
                 }
 
 			}
+        }
+		&-body {
+
+            max-height: 400px;
             &-description {
                 @include font($fontParagraphStyle , 16px , 1.5);
             }
