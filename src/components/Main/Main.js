@@ -1,10 +1,11 @@
 import React from 'react';
 import Section1 from './Section1';
+import Section2 from './Section2';
 function Main() {
 	return (
 		<main>
-      <h1>This Week Specials !</h1>
 			<Section1 />
+			<Section2 />
 		</main>
 	);
 }

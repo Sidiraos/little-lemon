@@ -16,31 +16,41 @@ function Section1() {
 		{
 			title: 'Bruchetta',
 			img: bruchetta,
-			description:`Bruschetta: Grilled bread rubbed with garlic, topped with diced tomatoes, fresh basil, olive oil—an appetizing blend of crunch, zest, and herb-infused delight.`,
+			description: `Bruschetta: Grilled bread rubbed with garlic, topped with diced tomatoes, fresh basil, olive oil—an appetizing blend of crunch, zest, and herb-infused delight.`,
 			price: '$18',
 		},
 		{
 			title: 'Lemon Dessert',
 			img: lemonDessert,
-			description: 'Lemon Dessert: Zesty indulgence with a citrusy twist. Luscious lemon curd, velvety texture, balanced sweetness—a tangy-sweet finale that delights the palate.',
+			description:
+				'Lemon Dessert: Zesty indulgence with a citrusy twist. Luscious lemon curd, velvety texture, balanced sweetness—a tangy-sweet finale that delights the palate.',
 			price: '$15',
 		},
 	]);
-	const [footerItem, setFooterItem] = useState([footerLogo, 'delivery logo']);
+	const [footerItem, setFooterItem] = useState([
+		footerLogo,
+		'delivery logo',
+		'Order food',
+		'/orderfood',
+	]);
 	return (
-		<section>
-			{cardItem.map((item, index) => {
-				return (
-					<Card
-						key={index}
-						title={item.title}
-						img={item.img}
-						description={item.description}
-						price={item.price}
-						footerItem={footerItem}
-					/>
-				);
-			})}
+		<section className="section1">
+			<h1>This Week Specials !</h1>
+
+			<div className="container">
+				{cardItem.map((item, index) => {
+					return (
+						<Card
+							key={index}
+							title={item.title}
+							img={item.img}
+							description={item.description}
+							price={item.price}
+							footerItem={footerItem}
+						/>
+					);
+				})}
+			</div>
 		</section>
 	);
 }

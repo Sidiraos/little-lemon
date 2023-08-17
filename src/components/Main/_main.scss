@@ -1,13 +1,2 @@
-main {
-    padding-top: 200px;
-    padding-bottom: 20px;
-    padding-left: clamp(10px , 5vw, 15px);
-    padding-right: clamp(10px , 5vw, 15px);
-    max-width: 900px;
-    margin: auto;
-    h1 {
-        @include font($fontTitle , clamp(40px , 10vw , 80px) , inherit);
-    }
-}
-
 @import './section1';
+@import './section2';

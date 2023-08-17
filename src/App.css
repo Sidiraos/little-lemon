@@ -211,7 +211,7 @@ header {
     opacity: 1;
   }
 }
-main {
+section.section1 {
   padding-top: 200px;
   padding-bottom: 20px;
   padding-left: clamp(10px, 5vw, 15px);
@@ -219,13 +219,12 @@ main {
   max-width: 900px;
   margin: auto;
 }
-main h1 {
+section.section1 h1 {
   font-family: "Markazi Text", serif;
   font-size: clamp(40px, 10vw, 80px);
   line-height: inherit;
 }
-
-section {
+section.section1 div.container {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -308,6 +307,66 @@ section {
 }
 .card-footer-logo {
   width: 30px;
+}
+
+section.section2 {
+  min-height: 400px;
+  background: #f4ce14;
+  text-align: center;
+  padding: 20px 30px;
+}
+section.section2 .container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+section.section2 .card {
+  display: flex;
+  width: 227.25px;
+  padding: 17.5px 12.5px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 16px;
+  background: #edefee;
+  box-shadow: 0px 14.4666996002px 30.7802143097px 0px rgba(21, 21, 21, 0.15);
+  height: 510px;
+}
+section.section2 .card-img {
+  width: 134.75px;
+  height: 134.75px;
+}
+section.section2 .card-img img {
+  border-radius: 134.75px;
+}
+section.section2 .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: 400px;
+}
+section.section2 .card-body-name {
+  font-family: "Markazi Text", serif;
+  font-size: 18px;
+  line-height: inherit;
+}
+section.section2 .card-body-name + p {
+  font-weight: 200;
+  text-align: center;
+}
+section.section2 .card-body-rating svg {
+  width: 20.367px;
+  height: 20.367px;
+}
+section.section2 .card-body-description {
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+section.section2 .card-footer {
+  text-align: center;
 }
 
 @media screen and (max-width: 839px) {
@@ -396,7 +455,7 @@ section {
   main {
     margin-top: 20px;
   }
-  section {
+  div.container {
     flex-direction: column;
     margin-top: 20px;
   }

@@ -1,0 +1,59 @@
+section.section2 {
+	min-height: 400px;
+	background: $primaryColor2;
+	text-align: center;
+	padding: 20px 30px;
+    .container {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+	.card {
+		display: flex;
+		width: 227.25px;
+		padding: 17.5px 12.5px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+        border-radius: 16px;
+        background: $highlightColor1;
+        box-shadow: 0px 14.466699600219727px 30.780214309692383px 0px rgba(21, 21, 21, 0.15);
+        height: 510px;
+		&-img {
+			width: 134.75px;
+			height: 134.75px;
+			img {
+				border-radius: 134.75px;
+			}
+		}
+		&-body {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            max-height: 400px;
+            &-name {
+                @include font($fontTitle , 18px , inherit);
+                + p {
+                    font-weight: 200;
+                    text-align: center;
+                }
+            }
+
+			&-rating {
+                svg {
+                    width: 20.367px;
+                    height: 20.367px;
+                }
+
+			}
+            &-description {
+                @include font($fontParagraphStyle , 16px , 1.5);
+            }
+		}
+        &-footer{
+            text-align: center;
+        }
+	}
+}
