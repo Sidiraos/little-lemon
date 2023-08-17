@@ -1,10 +1,10 @@
 import React from 'react';
-import Section from './Section';
-import Button from '../Header/Button';
+import Section1 from './Section1';
 function Main() {
 	return (
 		<main>
-			<Section />
+      <h1>This Week Specials !</h1>
+			<Section1 />
 		</main>
 	);
 }

@@ -17,6 +17,9 @@ header {
         // animation : imgAnimation  2s ease-in-out forwards;
         border-radius: 0;
     }
+    button {
+        top : 131%;
+    }
 }
 .header-img.active img {
     animation : imgAnimationResponsive 2s ease-in-out forwards;

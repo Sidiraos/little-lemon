@@ -1,69 +1,71 @@
 // variables sass
 // colors
-$primaryColor1 : #495E57;
-$primaryColor2 : #F4CE14;
-$secondaryColor1 : #EE9972;
-$secondaryColor2 : #FBDABB;
-$highlightColor1 : #EDEFEE;
-$highlightColor2 : #333333;
+$primaryColor1: #495e57;
+$primaryColor2: #f4ce14;
+$secondaryColor1: #ee9972;
+$secondaryColor2: #fbdabb;
+$highlightColor1: #edefee;
+$highlightColor2: #333333;
 // font family
 
 @import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@500&family=Open+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
 
 // for lead text (for descriptive items to catch attention !  exp CTA , home page) and card title , nav item
-$fontTitle : 'Markazi Text', serif;
+$fontTitle: 'Markazi Text', serif;
 // for p max 65 char per line and line-height 1.5 , highlight like price
-$fontParagraphStyle :'Karla', sans-serif;
+$fontParagraphStyle: 'Karla', sans-serif;
 
-@mixin font ($font , $size , $height) {
- font-family: $font;
- font-size: $size;
- line-height: $height;
-};
+@mixin font($font, $size, $height) {
+	font-family: $font;
+	font-size: $size;
+	line-height: $height;
+}
 
-@mixin button (){
-    border-radius: 20px;
-    background: $primaryColor2;
-    cursor: pointer;
-    padding: 10px 15px;
-    @include font($fontTitle, 22px , inherit);
+@mixin button() {
+	border-radius: 20px;
+	background: $primaryColor2;
+	cursor: pointer;
+	padding: 10px 15px;
+	border: none;
+	@include font($fontTitle, 22px, inherit);
 }
 // global item
-*, ::before , ::after{
-    box-sizing: border-box;
-    margin: 0;
-    padding-left: 0;
-    padding-right: 0;
+*,
+::before,
+::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding-left: 0;
+	padding-right: 0;
 }
 a {
-    text-decoration: none;
-    color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 .primary-btn {
-    @include button();
-    margin-top: 20px;
-    opacity: 0;
-    transition: background 200ms ease-in;
-    animation: fadeIn 2s ease-in-out forwards;
+	@include button();
+	margin-top: 20px;
+	opacity: 0;
+	transition: background 200ms ease-in;
+	animation: fadeIn 2s ease-in-out forwards;
 
-    &:hover {
-        background: $secondaryColor1;
-    }
- }
+	&:hover {
+		background: $secondaryColor1;
+	}
+}
 // scss files
 @import './components/Nav/Nav';
 @import './components/Header/Header';
 @import './components/Main/main';
-
 // queries
 @media screen and (max-width: 839px) {
-    @import './components/Nav/NavResponsive_md';
-    @import './components/Header/Header-md-responsive';
+	@import './components/Nav/NavResponsive_md';
+	@import './components/Header/Header-md-responsive';
+	@import './components/Main/section1_md';
 }
 
-@media screen and (max-width : 350px) {
-    @import './components/Nav/NavResponsive_xs';
-
+@media screen and (max-width: 350px) {
+	@import './components/Nav/NavResponsive_xs';
 }

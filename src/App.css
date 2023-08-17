@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@500&family=Open+Sans:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
   margin: 0;
   padding-left: 0;
@@ -14,9 +16,10 @@ a {
 
 .primary-btn {
   border-radius: 20px;
-  background: #F4CE14;
+  background: #f4ce14;
   cursor: pointer;
   padding: 10px 15px;
+  border: none;
   font-family: "Markazi Text", serif;
   font-size: 22px;
   line-height: inherit;
@@ -26,7 +29,7 @@ a {
   animation: fadeIn 2s ease-in-out forwards;
 }
 .primary-btn:hover {
-  background: #EE9972;
+  background: #ee9972;
 }
 
 nav {
@@ -35,7 +38,7 @@ nav {
   align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
   justify-content: space-between;
-  background-color: #EDEFEE;
+  background-color: #edefee;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -64,12 +67,12 @@ nav ul.navbar-nav li.nav-item {
   transition: color 300ms ease-in;
 }
 .nav-link:hover {
-  color: #495E57;
+  color: #495e57;
 }
 
 .nav-btn {
   display: none;
-  background-color: #EDEFEE;
+  background-color: #edefee;
   width: 60px;
   height: 60px;
   border: 1px solid rgba(0, 0, 0, 0.206);
@@ -110,7 +113,7 @@ nav ul.navbar-nav li.nav-item {
 }
 
 header {
-  background-color: #495E57;
+  background-color: #495e57;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -127,19 +130,19 @@ header {
   margin-right: 20px;
 }
 .header-info h1 {
-  color: #F4CE14;
+  color: #f4ce14;
   font-family: "Markazi Text", serif;
   font-size: clamp(40px, 10vw, 80px);
   line-height: inherit;
 }
 .header-info h2 {
-  color: #EDEFEE;
+  color: #edefee;
   font-family: "Markazi Text", serif;
   font-size: clamp(30px, 5vw, 50px);
   line-height: inherit;
 }
 .header-info p {
-  color: #EDEFEE;
+  color: #edefee;
   font-family: "Markazi Text", serif;
   font-size: 22px;
   line-height: 1.4;
@@ -208,8 +211,98 @@ header {
     opacity: 1;
   }
 }
-main button {
-  transform: translateX(79%);
+main {
+  padding-top: 200px;
+  padding-bottom: 20px;
+  padding-left: clamp(10px, 5vw, 15px);
+  padding-right: clamp(10px, 5vw, 15px);
+  max-width: 900px;
+  margin: auto;
+}
+main h1 {
+  font-family: "Markazi Text", serif;
+  font-size: clamp(40px, 10vw, 80px);
+  line-height: inherit;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 349px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  background: #edefee;
+  border-radius: 19px 19px 0px 0px;
+  position: relative;
+  overflow: auto;
+}
+.card-img {
+  height: 200px;
+  border-radius: inherit;
+}
+.card-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: inherit;
+}
+.card-body, .card-footer {
+  padding: 20px;
+}
+.card-body {
+  max-height: 300px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+.card-body-title {
+  display: flex;
+  justify-content: space-between;
+}
+.card-body-title span:nth-child(1) {
+  font-family: "Markazi Text", serif;
+  font-size: 20px;
+  line-height: inherit;
+}
+.card-body-title span:nth-child(2) {
+  font-family: "Karla", sans-serif;
+  font-size: 18px;
+  line-height: inherit;
+  color: #ee9972;
+}
+.card-body-description {
+  font-family: "Karla", sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  margin-top: 10px;
+  overflow-wrap: break-word;
+}
+.card-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.card-footer button {
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  background: #ee9972;
+  cursor: pointer;
+  font-family: "Markazi Text", serif;
+  font-size: 20px;
+  line-height: inherit;
+  transition: background 200ms ease-in;
+}
+.card-footer button:hover {
+  background: #f4ce14;
+}
+.card-footer-logo {
+  width: 30px;
 }
 
 @media screen and (max-width: 839px) {
@@ -235,7 +328,7 @@ main button {
     position: absolute;
     bottom: -211px;
     opacity: 0;
-    color: #EDEFEE;
+    color: #edefee;
   }
   div.nav-brand + div.active {
     transition: opacity 0.3s ease-in-out, background 0.3s ease-in;
@@ -281,6 +374,9 @@ main button {
     transform: translateY(0) scale(0) rotate(0);
     border-radius: 0;
   }
+  .header-img button {
+    top: 131%;
+  }
   .header-img.active img {
     animation: imgAnimationResponsive 2s ease-in-out forwards;
   }
@@ -291,6 +387,21 @@ main button {
     100% {
       transform: translateY(0) scale(1) rotate(360deg);
     }
+  }
+  main {
+    margin-top: 20px;
+  }
+  section {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .card {
+    max-width: 650px;
+    width: 100%;
+    margin: auto;
+  }
+  .card-img {
+    height: 300px;
   }
 }
 @media screen and (max-width: 350px) {

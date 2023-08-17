@@ -1,0 +1,15 @@
+main {
+    margin-top: 20px;
+}
+section {
+    flex-direction: column;
+    margin-top: 20px;
+}
+.card {
+    max-width: 650px;
+    width: 100%;
+    margin: auto;
+    &-img{
+        height: 300px;
+    }
+}
