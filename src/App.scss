@@ -10,6 +10,7 @@ $highlightColor2: #333333;
 
 @import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@500&family=Open+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+@import "../node_modules/react-alice-carousel/lib/scss/alice-carousel.scss";
 
 // for lead text (for descriptive items to catch attention !  exp CTA , home page) and card title , nav item
 $fontTitle: 'Markazi Text', serif;
@@ -68,6 +69,8 @@ a {
 	@import './components/Nav/NavResponsive_md';
 	@import './components/Header/Header-md-responsive';
 	@import './components/Main/main_md';
+    @import './components/Main/section2_md';
+
 }
 
 @media screen and (max-width: 350px) {

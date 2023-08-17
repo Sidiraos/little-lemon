@@ -3,13 +3,35 @@ section.section2 {
 	@extend %section2;
 	text-align: center;
 	padding: 20px 30px;
-    .container {
-        display: flex;
-        gap: 10px;
-        justify-content: center;
-        margin-top: 20px;
-    }
+	h1 {
+		background: #ffb76b;
+		background: -webkit-linear-gradient(
+			to right,
+			#ffb76b 0%,
+			#ffa73d 30%,
+			#ff7c00 60%,
+			#ff7f04 100%
+		);
+		background: -moz-linear-gradient(
+			to right,
+			#ffb76b 0%,
+			#ffa73d 30%,
+			#ff7c00 60%,
+			#ff7f04 100%
+		);
+		background: linear-gradient(
+			to right,
+			#ffb76b 0%,
+			#ffa73d 30%,
+			#ff7c00 60%,
+			#ff7f04 100%
+		);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		@include font($fontTitle, clamp(1.2rem, 10vw, 4rem), inherit);
+	}
 	.card {
+		user-select: none;
 		display: flex;
 		width: 227.25px;
 		padding: 17.5px 12.5px;
@@ -17,47 +39,59 @@ section.section2 {
 		justify-content: center;
 		align-items: center;
 		gap: 10px;
-        border-radius: 16px;
-        background: $highlightColor1;
-        box-shadow: 0px 14.466699600219727px 30.780214309692383px 0px rgba(21, 21, 21, 0.15);
-        height: 510px;
+		border-radius: 16px;
+		background: $highlightColor1;
+		box-shadow: 0px 14.466699600219727px 30.780214309692383px 0px
+			rgba(21, 21, 21, 0.15);
+		height: 510px;
 		&-img {
 			width: 134.75px;
 			height: 134.75px;
-            min-height: 134.75px;
+			min-height: 134.75px;
 			img {
 				border-radius: 134.75px;
 			}
 		}
-        &-info {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            &-name {
-                @include font($fontTitle , 18px , inherit);
-                + p {
-                    font-weight: 200;
-                    text-align: center;
-                }
-            }
+		&-info {
+			display: flex;
+			flex-direction: column;
+			gap: 14px;
+			&-name {
+				@include font($fontTitle, 18px, inherit);
+				+ p {
+					font-weight: 200;
+					text-align: center;
+				}
+			}
 
 			&-rating {
-                svg {
-                    width: 20.367px;
-                    height: 20.367px;
-                }
-
+				svg {
+					width: 20.367px;
+					height: 20.367px;
+				}
 			}
-        }
-		&-body {
-
-            max-height: 400px;
-            &-description {
-                @include font($fontParagraphStyle , 16px , 1.5);
-            }
 		}
-        &-footer{
-            text-align: center;
-        }
+		&-body {
+			max-height: 400px;
+			&-description {
+				@include font($fontParagraphStyle, 16px, 1.5);
+			}
+		}
+		&-footer {
+			text-align: center;
+		}
 	}
+}
+
+.alice-carousel {
+	margin-top: 37px;
+	max-width: 980px;
+}
+.alice-carousel__stage {
+	// display: flex;
+	list-style-type: none;
+	gap: 14px;
+}
+.alice-carousel__stage-item {
+	white-space: break-spaces;
 }

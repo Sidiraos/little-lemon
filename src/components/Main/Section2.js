@@ -4,7 +4,8 @@ import profile1 from './images/section2/profile1.jpg';
 import profile2 from './images/section2/profile2.jpg';
 import profile3 from './images/section2/profile3.jpg';
 import profile4 from './images/section2/profile4.jpg';
-import star from './images/section2/rating.png';
+import AliceCarousel from 'react-alice-carousel';
+// import 'react-alice-carousel/lib/alice-carousel.css';
 
 function Section2() {
 	const [reviews, setReviews] = useState([
@@ -37,26 +38,40 @@ function Section2() {
 			profile: profile4,
 		},
 	]);
+
+	const handleDragStart = (e) => e.preventDefault();
+
+	const items = reviews.map((review, index) => {
+		return (
+			<Testimonials
+				key={index}
+				name={review.name}
+				title={review.title}
+				text={review.text}
+				rating={review.rating}
+				profile={review.profile}
+				onDragStart={handleDragStart}
+			/>
+		);
+	});
+	console.log(items);
+	const responsive = {
+		0: { items: 1 },
+		839: { items: 3 },
+	};
 	return (
 		<section className="section2">
 			<h1>Testimonials</h1>
-            <div className='container'>
-            {
-                reviews.map((review, index) => {
-                    return (
-                        <Testimonials
-                            key={index}
-                            name={review.name}
-                            title={review.title}
-                            text={review.text}
-                            rating={review.rating}
-                            profile={review.profile}
-                        /> 
-                        )
-                })
-            }
-            </div>
-            
+			<>
+				<AliceCarousel
+					mouseTracking = {true}
+					items={items}
+					responsive={responsive}
+					controlsStrategy="responsive"
+                    disableButtonsControls = {true}
+        
+				/>
+			</>
 		</section>
 	);
 }

@@ -1,14 +1,14 @@
 import React from 'react';
 import Star from './Star';
 
-function Testimonials({ name, title, text, rating, profile }) {
+function Testimonials({ name, title, text, rating, profile , onDragStart }) {
 	const stars = [];
 	for (let index = 0; index < Math.ceil(rating); index++) {
 		stars.push(<Star />);
 	}
 
 	return (
-		<div className="card">
+		<div onDragStart={onDragStart} className="card testimonial-card">
 			<div className="card-img">
 				<img src={profile} alt={profile} />
 			</div>
