@@ -3,6 +3,8 @@ section.section2 {
 	@extend %section2;
 	text-align: center;
 	padding: 20px 30px;
+	position: relative;
+	z-index: 5;
 	h1 {
 		background: #ffb76b;
 		background: -webkit-linear-gradient(

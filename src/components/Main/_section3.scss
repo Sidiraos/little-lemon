@@ -1,0 +1,25 @@
+.section3-container {
+	@include headerSelector($highlightColor1, 100px 40px 60px 40px);
+	justify-content: flex-start;
+	min-height: 500px;
+	margin: auto;
+	max-width: 1280px;
+}
+.section3-img {
+	display: grid;
+	flex-basis: 100%;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 10px;
+	img {
+        transition: transform 300ms ease-out ;
+		&:hover {
+			transform: scale(1.2);
+		}
+	}
+}
+#s-info {
+	h2,
+	p {
+		color: $highlightColor2;
+	}
+}

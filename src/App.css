@@ -214,6 +214,10 @@ section.section2 {
   padding-right: 0;
 }
 
+body {
+  background: #edefee;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -346,6 +350,10 @@ header {
   font-size: clamp(30px, 5vw, 50px);
   line-height: inherit;
 }
+.header-info h1,
+.header-info h2 {
+  transform: translateY(-120%);
+}
 .header-info p {
   color: #edefee;
   font-family: "Markazi Text", serif;
@@ -353,11 +361,13 @@ header {
   line-height: 1.4;
   margin-top: 20px;
   transform: translateX(-100%);
-  animation: slideX 1s ease-in-out forwards;
 }
-.header-info h1, .header-info h2 {
-  transform: translateY(-100%);
+.header-info h1.active,
+.header-info h2.active {
   animation: slideY 1s ease-in-out forwards;
+}
+.header-info p {
+  animation: slideX 1s ease-in-out forwards;
 }
 
 .header-img {
@@ -519,6 +529,8 @@ section.section2 {
   min-height: 400px;
   text-align: center;
   padding: 20px 30px;
+  position: relative;
+  z-index: 5;
 }
 section.section2 h1 {
   background: #ffb76b;
@@ -597,6 +609,45 @@ section.section2 .card-footer {
   white-space: break-spaces;
 }
 
+.section3-container {
+  background-color: #edefee;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 40px 60px 40px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  justify-content: flex-start;
+  min-height: 500px;
+  margin: auto;
+  max-width: 1280px;
+}
+
+.section3-img {
+  display: grid;
+  flex-basis: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+.section3-img img {
+  transition: transform 300ms ease-out;
+}
+.section3-img img:hover {
+  transform: scale(1.2);
+}
+
+#s-info h2,
+#s-info p {
+  color: #333333;
+}
+
+@media screen and (min-width: 1281px) {
+  .section3-img {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 @media screen and (max-width: 839px) {
   nav {
     flex-direction: column;
@@ -698,8 +749,11 @@ section.section2 .card-footer {
   .testimonial-card {
     width: 100% !important;
   }
-  .testimonial-card {
-    width: 100% !important;
+  .section3-container {
+    flex-direction: column;
+  }
+  .section3-img {
+    margin-top: 40px;
   }
 }
 @media screen and (max-width: 350px) {
@@ -715,5 +769,12 @@ section.section2 .card-footer {
   }
   .nav-icon, .nav-icon::before, .nav-icon::after {
     width: 15px;
+  }
+  .section3-container {
+    padding: 0;
+    padding-top: 40px;
+  }
+  .section3-img {
+    grid-template-columns: repeat(1, 1fr);
   }
 }/*# sourceMappingURL=App.css.map */

@@ -5,7 +5,6 @@ import profile2 from './images/section2/profile2.jpg';
 import profile3 from './images/section2/profile3.jpg';
 import profile4 from './images/section2/profile4.jpg';
 import AliceCarousel from 'react-alice-carousel';
-// import 'react-alice-carousel/lib/alice-carousel.css';
 
 function Section2() {
 	const [reviews, setReviews] = useState([
