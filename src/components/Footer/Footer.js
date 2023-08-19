@@ -85,7 +85,7 @@ function Footer() {
 				</div>
 				<div className="footer-bloc-2">
 					<div className="footer-bloc-2-child-1">
-						<p>© {currentYear} Little Lemon</p>
+						<p>© {currentYear} Sidiraos</p>
 					</div>
 					<div className="footer-bloc-2-child-2">
 						<ul>
