@@ -77,17 +77,51 @@ a {
 @import './components/Footer/footer';
 // queries
 // xl
-@media screen and (min-width : 1281px) {
-    @import './components/Main/main_xl';
+@media screen and (min-width: 1281px) {
+	@import './components/Main/main_xl';
 }
 // md
 @media screen and (max-width: 839px) {
 	@import './components/Nav/NavResponsive_md';
 	@import './components/Header/Header-md-responsive';
 	@import './components/Main/main_md';
+	@import './components/Footer/footer_md';
+
+}
+// 2xs
+@media screen and (max-width: 640px) {
+	.footer-bloc-1 {
+		grid-template-columns: repeat(1, 1fr);
+		grid-gap: 50px;
+		&-child-1 {
+			img {
+				max-width: 300px;
+			}
+		}
+		&-child-2,
+		&-child-3 {
+			text-align: center;
+		}
+		&-child-2 {
+			p {
+				max-width: 300px;
+				margin: auto;
+			}
+		}
+	}
+	.footer-bloc-2 {
+		&-child-2 {
+
+			ul {
+				flex-direction: column;
+			}
+		}
+	}
 }
 // xs
 @media screen and (max-width: 350px) {
 	@import './components/Nav/NavResponsive_xs';
-    @import './components/Main/main_xs';
+	@import './components/Main/main_xs';
+	@import './components/Footer/footer_xs';
+
 }

@@ -1,0 +1,12 @@
+.footer-bloc-1 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+}
+.footer-bloc-2 {
+    &-child-2 {
+        margin-left: 0;
+    }
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 50px;
+}

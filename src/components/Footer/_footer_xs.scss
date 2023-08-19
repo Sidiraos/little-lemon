@@ -1,0 +1,14 @@
+footer {
+    padding: 10px 0;
+}
+.footer-bloc-1 {
+    &-child-1 {
+        width: auto;
+    }
+}
+
+form {
+    input {
+        width: 100%;
+    }
+}
