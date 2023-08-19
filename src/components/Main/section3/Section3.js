@@ -5,6 +5,7 @@ import chefAdrian from '../images/section 3 gallery/Mario and Adrian b-min.jpg';
 import restaurant from '../images/section 3 gallery/restaurant chef B-min.jpg';
 import restaurant2 from '../images/section 3 gallery/restaurant-min.jpg';
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 function Section3() {
 	const galleryImg = [
 		{
@@ -32,7 +33,7 @@ function Section3() {
 					{galleryImg.map((img) => {
 						return (
 							<Link to={img.img}>
-								<img
+								<LazyLoadImage
 									key={img.id}
 									src={img.img}
 									alt={`little lemon area ${img.id}`}

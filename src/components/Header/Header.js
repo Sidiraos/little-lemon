@@ -1,4 +1,4 @@
-import React , {useRef , useEffect , useState} from 'react';
+import React , {useRef} from 'react';
 import hero from './restauranfood-min.jpg';
 import HeaderInfo from './HeaderInfo';
 import HeaderImg from './HeaderImg';

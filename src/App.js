@@ -3,7 +3,7 @@ import Header from './components/Header/Header';
 import Nav from './components/Nav/Nav';
 import Main from './components/Main/Main';
 import Footer from './components/Footer/Footer';
-import { NavItem } from './components/contexts/MyContext';
+import {NavItem} from './components/contexts/MyContext';
 
 function App() {
 	const items = [
@@ -22,7 +22,7 @@ function App() {
 			<Header />
 			<Main />
 			<NavItem.Provider value={items}>
-				<Footer />
+				<Footer/>
 			</NavItem.Provider>
 		</>
 	);

@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 function Card({ title, img, description, price, footerCardItem }) {
 	return (
 		<div className="card">
 			<div className="card-img">
-				<img src={img} alt={title} />
+				<LazyLoadImage src={img} alt={title} />
 			</div>
 			<div className="card-header">
 				<h3 className="card-header-title">

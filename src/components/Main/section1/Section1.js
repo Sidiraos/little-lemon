@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
-import Card from '../Card';
+import React from 'react';
+// import Card from '../Card';
+import footerLogo from '../images/person-biking-solid.svg';
 import bruchetta from '../images/bruchetta-min.jpg';
 import greekSalad from '../images/greek salad-min.jpg';
 import lemonDessert from '../images/lemon dessert-min.jpg';
-import footerLogo from '../images/person-biking-solid.svg';
+import ClipLoader from 'react-spinners/ClipLoader';
+
+
+const Card = React.lazy(() => import('../Card'));
+
 
 function Section1() {
-	const [cardItem, setCardItem] = useState([
+	const cardItem = [
 		{
 			title: 'Greek Salad',
 			img: greekSalad,
@@ -26,7 +31,7 @@ function Section1() {
 				'Lemon Dessert: Zesty indulgence with a citrusy twist. Luscious lemon curd, velvety texture, balanced sweetness—a tangy-sweet finale that delights the palate.',
 			price: '$15',
 		},
-	]);
+	];
 	const footerCardItem = [
 		footerLogo,
 		'delivery logo',
@@ -40,14 +45,29 @@ function Section1() {
 			<div className="container">
 				{cardItem.map((item, index) => {
 					return (
-						<Card
-							key={index}
-							title={item.title}
-							img={item.img}
-							description={item.description}
-							price={item.price}
-							footerCardItem={footerCardItem}
-						/>
+						<React.Suspense
+							fallback={
+								<ClipLoader
+									color={'blue'}
+									loading={true}
+									cssOverride={{
+										margin : '0 auto'
+									}}
+									size={100}
+									aria-label="Loading Spinner"
+									data-testid="loader"
+								/>
+							}
+						>
+							<Card
+								key={index}
+								title={item.title}
+								img={item.img}
+								description={item.description}
+								price={item.price}
+								footerCardItem={footerCardItem}
+							/>
+						</React.Suspense>
 					);
 				})}
 			</div>

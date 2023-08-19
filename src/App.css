@@ -630,6 +630,7 @@ section.section2 .card-footer {
   flex-basis: 100%;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
+  overflow: hidden;
 }
 .section3-img img {
   transition: transform 300ms ease-out;
