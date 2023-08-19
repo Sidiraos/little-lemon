@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Card({ title, img, description, price, footerItem }) {
+function Card({ title, img, description, price, footerCardItem }) {
 	return (
 		<div className="card">
 			<div className="card-img">
@@ -17,12 +17,12 @@ function Card({ title, img, description, price, footerItem }) {
 			</div>
 			<div className="card-footer">
 				<button>
-					<Link to={footerItem[3]}>{footerItem[2]}</Link>
+					<Link to={footerCardItem[3]}>{footerCardItem[2]}</Link>
 				</button>
 				<img
 					className="card-footer-logo"
-					src={footerItem[0]}
-					alt={footerItem[1]}
+					src={footerCardItem[0]}
+					alt={footerCardItem[1]}
 				/>
 			</div>
 		</div>

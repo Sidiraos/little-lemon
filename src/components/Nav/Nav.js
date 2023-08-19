@@ -1,21 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from './Logo.svg';
 import HamburgerMenu from './HamburgerMenu';
+import { NavItem } from '../contexts/MyContext';
 
 function Nav() {
-	const [navItem, setNavItem] = useState([
-		'Home',
-		'Login',
-		'About',
-		'Menu',
-		'Reservations',
-		'Order online',
-	]);
+	const navItem = useContext(NavItem);
 	const itemsNav = navItem.map((item, index) => {
 		return (
 			<li className="nav-item" key={index}>
-				<Link className='nav-link' to={`/${item}`}>{item}</Link>
+				<Link className="nav-link" to={`/${item}`}>
+					{item}
+				</Link>
 			</li>
 		);
 	});
@@ -31,13 +27,12 @@ function Nav() {
 		divItemRef.current.classList.toggle('active');
 		navRef.current.classList.toggle('active');
 	};
-	useEffect(()=>{
+	useEffect(() => {
 		console.log(navRef.current.offsetHeight);
-		// document.body.style.paddingTop = navRef.current.offsetHeight + 'px';
-	} , [])
+	}, []);
 
 	return (
-		<nav ref = {navRef}>
+		<nav ref={navRef}>
 			<div className="nav-brand">
 				<Link to="/">
 					<img src={logo} alt="little lemon logo" />
@@ -50,5 +45,4 @@ function Nav() {
 		</nav>
 	);
 }
-
 export default Nav;

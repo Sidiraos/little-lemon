@@ -643,6 +643,17 @@ section.section2 .card-footer {
   color: #333333;
 }
 
+footer {
+  margin-top: auto;
+  min-height: 306px;
+  background: #000;
+  position: relative;
+  padding: 10px clamp(10px, 5vw, 50px);
+  display: flex;
+  flex-direction: column;
+  color: #edefee;
+}
+
 @media screen and (min-width: 1281px) {
   .section3-img {
     grid-template-columns: repeat(3, 1fr);

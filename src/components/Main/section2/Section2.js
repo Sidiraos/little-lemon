@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Testimonials from './Testimonials';
-import profile1 from './images/section2/profile1.jpg';
-import profile2 from './images/section2/profile2.jpg';
-import profile3 from './images/section2/profile3.jpg';
-import profile4 from './images/section2/profile4.jpg';
+import Testimonials from '../Testimonials';
+import profile1 from '../images/section2/profile1.jpg';
+import profile2 from '../images/section2/profile2.jpg';
+import profile3 from '../images/section2/profile3.jpg';
+import profile4 from '../images/section2/profile4.jpg';
 import AliceCarousel from 'react-alice-carousel';
 
 function Section2() {

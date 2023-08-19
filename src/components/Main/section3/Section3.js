@@ -1,9 +1,9 @@
 import React from 'react';
-import SectionInfo from '../Header/HeaderInfo';
-import chefMario from './images/section 3 gallery/Mario and Adrian A-min.jpg';
-import chefAdrian from './images/section 3 gallery/Mario and Adrian b-min.jpg';
-import restaurant from './images/section 3 gallery/restaurant chef B-min.jpg';
-import restaurant2 from './images/section 3 gallery/restaurant-min.jpg';
+import SectionInfo from '../../Header/HeaderInfo';
+import chefMario from '../images/section 3 gallery/Mario and Adrian A-min.jpg';
+import chefAdrian from '../images/section 3 gallery/Mario and Adrian b-min.jpg';
+import restaurant from '../images/section 3 gallery/restaurant chef B-min.jpg';
+import restaurant2 from '../images/section 3 gallery/restaurant-min.jpg';
 import { Link } from 'react-router-dom';
 function Section3() {
 	const galleryImg = [

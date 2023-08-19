@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Card from './Card';
-import bruchetta from './images/bruchetta-min.jpg';
-import greekSalad from './images/greek salad-min.jpg';
-import lemonDessert from './images/lemon dessert-min.jpg';
-import footerLogo from './images/person-biking-solid.svg';
+import Card from '../Card';
+import bruchetta from '../images/bruchetta-min.jpg';
+import greekSalad from '../images/greek salad-min.jpg';
+import lemonDessert from '../images/lemon dessert-min.jpg';
+import footerLogo from '../images/person-biking-solid.svg';
 
 function Section1() {
 	const [cardItem, setCardItem] = useState([
@@ -27,12 +27,12 @@ function Section1() {
 			price: '$15',
 		},
 	]);
-	const [footerItem, setFooterItem] = useState([
+	const footerCardItem = [
 		footerLogo,
 		'delivery logo',
 		'Order food',
 		'/orderfood',
-	]);
+	];
 	return (
 		<section className="section1">
 			<h1>This Week Specials !</h1>
@@ -46,7 +46,7 @@ function Section1() {
 							img={item.img}
 							description={item.description}
 							price={item.price}
-							footerItem={footerItem}
+							footerCardItem={footerCardItem}
 						/>
 					);
 				})}

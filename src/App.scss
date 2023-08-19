@@ -74,34 +74,20 @@ a {
 @import './components/Nav/Nav';
 @import './components/Header/Header';
 @import './components/Main/main';
+@import './components/Footer/footer';
 // queries
 // xl
 @media screen and (min-width : 1281px) {
-    .section3-img{
-        grid-template-columns: repeat(3 , 1fr);
-    }
+    @import './components/Main/main_xl';
 }
 // md
 @media screen and (max-width: 839px) {
 	@import './components/Nav/NavResponsive_md';
 	@import './components/Header/Header-md-responsive';
 	@import './components/Main/main_md';
-    .section3-container {
-        flex-direction: column;
-    }
-	.section3-img {
-        margin-top: 40px;
-
-	}
 }
 // xs
 @media screen and (max-width: 350px) {
 	@import './components/Nav/NavResponsive_xs';
-    .section3-container {
-        padding: 0;
-        padding-top: 40px;
-    }
-    .section3-img {
-        grid-template-columns: repeat(1 , 1fr);
-    }
+    @import './components/Main/main_xs';
 }
