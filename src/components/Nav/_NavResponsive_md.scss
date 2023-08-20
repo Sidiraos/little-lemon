@@ -23,19 +23,19 @@ div.nav-brand {
         bottom: -211px;
         opacity: 0;
         color : $highlightColor1 ;
+        display: none;
 
     }
     + div.active {
-        // display: block;
-        transition: opacity 0.3s ease-in-out , background 0.3s ease-in;
-        opacity: 1;
+        display: flex;
+        animation: fadeIn 0.3s ease-in-out forwards;
+        transition: background 0.3s ease-in;
         background: $highlightColor2;
 
     }
 }
 
 div > ul.navbar-nav {
-    // display: none;
     width: 100%;
     flex-direction: column;
     text-align: center;

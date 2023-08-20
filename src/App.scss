@@ -53,6 +53,7 @@ $fontParagraphStyle: 'Karla', sans-serif;
 }
 body {
 	background: $highlightColor1;
+	scroll-behavior: smooth;
 }
 a {
 	text-decoration: none;
@@ -75,7 +76,12 @@ a {
 @import './components/Header/Header';
 @import './components/Main/main';
 @import './components/Footer/footer';
-// queries
+// components style
+@import './components/App/bookingform';
+
+
+
+// queries responsive
 // xl
 @media screen and (min-width: 1281px) {
 	@import './components/Main/main_xl';
@@ -117,6 +123,15 @@ a {
 			}
 		}
 	}
+
+	form.booking-form {
+		position: relative;
+		transform: translate(0);
+		gap: 10px;
+		top: 0;
+		left: 0;
+		border-radius: 0;
+	}
 }
 // xs
 @media screen and (max-width: 350px) {
@@ -125,3 +140,4 @@ a {
 	@import './components/Footer/footer_xs';
 
 }
+

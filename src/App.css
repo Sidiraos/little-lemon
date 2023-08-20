@@ -216,6 +216,7 @@ section.section2 {
 
 body {
   background: #edefee;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -735,14 +736,13 @@ footer {
   gap: 10px;
 }
 
-form {
+form.form-footer {
   display: flex;
   gap: 20px;
   flex-direction: column;
   justify-content: space-between;
 }
-
-input[type=email] {
+form.form-footer input {
   padding: 10px 10px;
   border: none;
   border-radius: 5px;
@@ -754,14 +754,13 @@ input[type=email] {
   transition: outline 300ms ease-in;
   outline: none;
 }
-input[type=email].invalid {
+form.form-footer input.invalid {
   outline: 2px solid hsl(0, 71%, 57%);
 }
-input[type=email].valid {
+form.form-footer input.valid {
   outline: 2px solid hsl(50, 91%, 52%);
 }
-
-input[type=submit] {
+form.form-footer input[type=submit] {
   padding: 10px 10px;
   border: none;
   border-radius: 5px;
@@ -772,7 +771,7 @@ input[type=submit] {
   line-height: inherit;
   transition: background 200ms ease-in;
 }
-input[type=submit]:active {
+form.form-footer input[type=submit]:active {
   background: #ee9972;
 }
 
@@ -785,6 +784,100 @@ input[type=submit]:active {
 .social svg {
   width: 30px;
   height: 30px;
+}
+
+form.booking-form {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  position: absolute;
+  max-width: 700px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+form.booking-form input {
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  background: #edefee;
+  cursor: pointer;
+  font-family: "Markazi Text", serif;
+  font-size: 20px;
+  line-height: inherit;
+  transition: outline 300ms ease-in;
+  outline: 1px solid rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+form.booking-form input.invalid {
+  outline: 2px solid hsl(0, 71%, 57%);
+}
+form.booking-form input.valid {
+  outline: 2px solid hsl(50, 91%, 52%);
+}
+form.booking-form select {
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  background: #edefee;
+  cursor: pointer;
+  font-family: "Markazi Text", serif;
+  font-size: 20px;
+  line-height: inherit;
+  transition: outline 300ms ease-in;
+  outline: 1px solid rgba(0, 0, 0, 0.3);
+}
+form.booking-form select.invalid {
+  outline: 2px solid hsl(0, 71%, 57%);
+}
+form.booking-form select.valid {
+  outline: 2px solid hsl(50, 91%, 52%);
+}
+form.booking-form label {
+  font-family: "Markazi Text", serif;
+  font-size: 22px;
+  line-height: inherit;
+}
+form.booking-form input[type=submit] {
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  background: #f4ce14;
+  cursor: pointer;
+  font-family: "Markazi Text", serif;
+  font-size: 20px;
+  line-height: inherit;
+  transition: background 200ms ease-in;
+}
+form.booking-form input[type=submit]:active {
+  background: #ee9972;
+}
+form.booking-form input [type=date] {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+}
+form.booking-form input[type=date]::-webkit-calendar-picker-indicator,
+form.booking-form input[type=time]::-webkit-calendar-picker-indicator {
+  background: none;
+  bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+}
+form.booking-form input[type=date]::-webkit-datetime-edit,
+form.booking-form input[type=time]::-webkit-datetime-edit {
+  text-align: center;
+  width: 100%;
 }
 
 @media screen and (min-width: 1281px) {
@@ -816,10 +909,12 @@ input[type=submit]:active {
     bottom: -211px;
     opacity: 0;
     color: #edefee;
+    display: none;
   }
   div.nav-brand + div.active {
-    transition: opacity 0.3s ease-in-out, background 0.3s ease-in;
-    opacity: 1;
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out forwards;
+    transition: background 0.3s ease-in;
     background: #333333;
   }
   div > ul.navbar-nav {
@@ -929,6 +1024,14 @@ input[type=submit]:active {
   }
   .footer-bloc-2-child-2 ul {
     flex-direction: column;
+  }
+  form.booking-form {
+    position: relative;
+    transform: translate(0);
+    gap: 10px;
+    top: 0;
+    left: 0;
+    border-radius: 0;
   }
 }
 @media screen and (max-width: 350px) {

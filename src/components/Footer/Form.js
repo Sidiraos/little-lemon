@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 
 function Form() {
 	const [email, setEmail] = useState('');
@@ -8,7 +8,7 @@ function Form() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setSubmitValue('Thank you!');
-		const timeout = setTimeout(() => {
+		setTimeout(() => {
 			setTimeout(() => {
 				setSubmitValue('Subscribe');
 				setEmail('');
@@ -27,7 +27,7 @@ function Form() {
     }
   }
 	return (
-		<form onSubmit={handleSubmit}>
+		<form className='form-footer' onSubmit={handleSubmit}>
 			<input
 				ref={emailRef}
 				type="email"

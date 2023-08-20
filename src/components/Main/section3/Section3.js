@@ -32,7 +32,7 @@ function Section3() {
 				<div className="section3-img">
 					{galleryImg.map((img) => {
 						return (
-							<Link to={img.img}>
+							<Link key={img.id} to={img.img}>
 								<LazyLoadImage
 									key={img.id}
 									src={img.img}

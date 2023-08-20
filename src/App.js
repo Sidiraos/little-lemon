@@ -1,29 +1,24 @@
 import './App.css';
-import Header from './components/Header/Header';
+import Home from './components/App/Home';
 import Nav from './components/Nav/Nav';
-import Main from './components/Main/Main';
-import Footer from './components/Footer/Footer';
-import {NavItem} from './components/contexts/MyContext';
+import BookingForm from './components/App/BookingForm';
+import { Route, Routes } from 'react-router-dom';
+import { NavItem, items } from './components/contexts/MyContext';
 
 function App() {
-	const items = [
-		'Home',
-		'Login',
-		'About',
-		'Menu',
-		'Reservations',
-		'Order online',
-	];
+
+
 	return (
 		<>
 			<NavItem.Provider value={items}>
-				<Nav />
+				<Nav/>
 			</NavItem.Provider>
-			<Header />
-			<Main />
-			<NavItem.Provider value={items}>
-				<Footer/>
-			</NavItem.Provider>
+			<Routes>
+				<Route path="/" element={<Home />}>
+					<Route path="/Home" element={<Home />} />
+				</Route>
+				<Route path="/Reservations" element={<BookingForm />} />
+			</Routes>
 		</>
 	);
 }

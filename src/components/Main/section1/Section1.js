@@ -46,6 +46,7 @@ function Section1() {
 				{cardItem.map((item, index) => {
 					return (
 						<React.Suspense
+						key={index}
 							fallback={
 								<ClipLoader
 									color={'blue'}

@@ -28,7 +28,7 @@ function SocialMedia() {
 		<div className="social">
 			{socialIcons.map((icon, index) => {
 				return (
-					<Link to={`/${icon.url}`}>
+					<Link key={index} to={`/${icon.url}`}>
 						<FontAwesomeIcon key={index} icon={icon.icon} />
 					</Link>
 				);
