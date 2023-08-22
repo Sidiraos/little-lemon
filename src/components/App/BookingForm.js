@@ -24,6 +24,7 @@ const BookingForm = React.forwardRef((props , ref) => {
 	const dynamicBtnWithNoAvailableSlots = <input type="submit" value="No slot available" disabled = {true}/>
 	const handleSubmit = (e)=> {
 		e.preventDefault();
+		props.getSubmitedData([date, time, guests, occasions]);
 		props.handleSlots(date);
 		setTime(hours[1]);
 		setOccasions(optionsOccasions[1]);

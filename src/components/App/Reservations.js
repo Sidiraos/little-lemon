@@ -6,6 +6,7 @@ function Reservations() {
     console.log('reservations is rendered')
 	const dateRef = useRef();
     const [defined , setDefined] = useState(false);
+    const [submitData , setSubmitData] = useState([]);
 
 	useEffect(() => {
         console.log('I am useEffect of reservations component')
@@ -72,12 +73,16 @@ function Reservations() {
     useEffect(()=>{
         console.log(state)
 
-    } , [state])
+    } , [state]);
+
+    const getSubmitedData = (values)=>{
+        setSubmitData([...values]);
+    }
 
 	return (
 		<div className='reservations'>
-            {defined && <BookingSlot date={dateRef.current.value} slots = {state} defaultSlot={[totalSlotCount , reservedSlotCount]}  />}
-			<BookingForm ref={dateRef} handleSlots = {handleSlots} updateRefDateValue={updateRefDateValue} slots = {state}/>
+            {defined && <BookingSlot date={dateRef.current.value} slots = {state} defaultSlot={[totalSlotCount , reservedSlotCount]} submitData = {submitData}  />}
+			<BookingForm ref={dateRef} handleSlots = {handleSlots} updateRefDateValue={updateRefDateValue} slots = {state} getSubmitedData = {getSubmitedData}/>
 		</div>
 	);
 }
