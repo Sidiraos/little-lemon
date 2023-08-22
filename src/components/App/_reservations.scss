@@ -1,0 +1,10 @@
+.reservations {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+    justify-content: flex-end;
+}
+
+
+@import './bookingform';
+@import './booking_slot';

@@ -1,13 +1,16 @@
+@mixin perfectCenter(){
+    position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 form.booking-form {
 	display: grid;
 	gap: 20px;
 	grid-template-columns: 1fr;
-	position: absolute;
 	max-width: 700px;
 	width: 100%;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
 	border: 1px solid rgba(0, 0, 0, 0.3);
 	border-radius: 10px;
 	padding: 20px;
@@ -25,28 +28,5 @@ form.booking-form {
 
 	input[type='submit'] {
 		@include inputSubmit();
-	}
-	input [type='date'] {
-		-moz-appearance: textfield;
-		-webkit-appearance: none;
-	}
-	input[type='date']::-webkit-calendar-picker-indicator,
-	input[type='time']::-webkit-calendar-picker-indicator {
-		background: none;
-		bottom: 0;
-		color: transparent;
-		cursor: pointer;
-		height: auto;
-		left: 0;
-		position: absolute;
-		right: 0;
-		top: 0;
-		width: auto;
-	}
-
-	input[type='date']::-webkit-datetime-edit,
-	input[type='time']::-webkit-datetime-edit {
-		text-align: center;
-		width: 100%;
 	}
 }

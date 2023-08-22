@@ -71,14 +71,13 @@ a {
 		background: $secondaryColor1;
 	}
 }
-// scss files
+// home page
 @import './components/Nav/Nav';
 @import './components/Header/Header';
 @import './components/Main/main';
 @import './components/Footer/footer';
-// components style
-@import './components/App/bookingform';
-
+// app 
+@import './components/App/reservations';
 
 
 // queries responsive
@@ -132,6 +131,11 @@ a {
 		left: 0;
 		border-radius: 0;
 	}
+	.reservations {
+		flex-direction: column;
+		gap: 20px;
+	}
+
 }
 // xs
 @media screen and (max-width: 350px) {

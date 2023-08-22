@@ -1,13 +1,12 @@
 import React from 'react'
 
-function HamburgerMenu({handleClick , active}) {
-const activeClass = active ? 'active' : '';
-console.log('je suis rendu')
+const HamburgerMenu = React.forwardRef(({handleClick}, ref)=>{
+  console.log('hamburger menu is rendered')
   return (
-    <div onClick={handleClick} className={`nav-btn ${activeClass}`}>
-      <span className={`nav-icon ${activeClass}`}></span>
+    <div ref={ref} onClick={handleClick} className={`nav-btn`}>
+      <span className={`nav-icon`}></span>
     </div>
   )
-}
+}) ;
 
 export default HamburgerMenu;

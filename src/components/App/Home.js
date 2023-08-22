@@ -4,6 +4,7 @@ import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
 import  {NavItem, items}  from '../contexts/MyContext';
 function Home() {
+	console.log('home is rendered')
 	return (
 		<>
 			<Header />

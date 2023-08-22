@@ -1,5 +1,8 @@
 import React, { useState , useEffect } from 'react';
-function BookingForm() {
+
+
+
+const BookingForm = React.forwardRef((props , ref) => {
 	const optionsOccasions =  ['Anniversary', 'Birthday', 'Other']
 	const hours = ['17:00', '18:00', '19:00', '20:00', '21:00'];
 	const [occasions , setOccasions] = useState(optionsOccasions[1]);
@@ -9,22 +12,24 @@ function BookingForm() {
 	const [disabled , setDisabled] = useState(false);
 	const [guests , setGuests]  = useState('');
 
+	console.log("Booking Form is rendered")
+
 
 	useEffect(()=> {
 		console.log(date);
-		const userDateYear = date.slice(0,4);
-		const userDateMonth =  date.slice(5,7);
-		const userDateDay =  date.slice(8,10);
-		console.log(parseInt(userDateYear));
-		console.log(parseInt(userDateMonth));
-		console.log(parseInt(userDateDay));
+		const userDateYear = parseInt(date.slice(0,4));
+		const userDateMonth =  parseInt(date.slice(5,7));
+		const userDateDay =  parseInt(date.slice(8,10));
+		// console.log(parseInt(userDateYear));
+		// console.log(parseInt(userDateMonth));
+		// console.log(parseInt(userDateDay));
 
 		const currentYear =  parseInt(new Date().toISOString().slice(0,4))
 		const currentMonth =  parseInt(new Date().toISOString().slice(5,7))
 		const currentDay =  parseInt(new Date().toISOString().slice(8,10))
-		console.log(currentYear);
-		console.log(currentMonth);
-		console.log(currentDay);
+		// console.log(currentYear);
+		// console.log(currentMonth);
+		// console.log(currentDay);
 
 		if(userDateYear < currentYear) {
 			setWarning('Please select a current year not an anterior year');
@@ -57,7 +62,7 @@ function BookingForm() {
 				{
 					setWarning('Please select a current day or a futur day');
 					setDisabled(true);
-				} else if (userDateDay == currentDay) {
+				} else if (userDateDay === currentDay) {
 					setWarning('');
 					setDisabled(false);
 				}
@@ -74,16 +79,22 @@ function BookingForm() {
 
 	const handleSubmit = (e)=> {
 		e.preventDefault();
+		props.handleSlots(date);
 		setDate(new Date().toISOString().slice(0, 10));
 		setTime(hours[1]);
 		setGuests('');
 		setOccasions(optionsOccasions[1]);
 	}
 
+	const handleDateChange = (e)=>{
+		setDate(e.target.value);
+		props.updateRefDateValue();
+	}
+
 	return (
 		<form className="booking-form" onSubmit={handleSubmit}>
 			<label htmlFor="res-date">Choose date</label>
-			<input type="date" id="res-date" required value={date} onChange={(e) => setDate(e.target.value)} />
+			<input ref = {ref}  type="date" id="res-date" required value={date} onChange={handleDateChange} />
 			<p style={{color: 'red'}}>{warning}</p>
 
 			<label htmlFor="res-time">Choose time</label>
@@ -122,6 +133,6 @@ function BookingForm() {
 			<input type="submit" value="Make Your reservation" disabled = {disabled}/>
 		</form>
 	);
-}
+})
 
 export default BookingForm;

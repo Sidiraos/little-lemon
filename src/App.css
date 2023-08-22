@@ -786,16 +786,19 @@ form.form-footer input[type=submit]:active {
   height: 30px;
 }
 
+.reservations {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 30px;
+  justify-content: flex-end;
+}
+
 form.booking-form {
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr;
-  position: absolute;
   max-width: 700px;
   width: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   padding: 20px;
@@ -856,28 +859,6 @@ form.booking-form input[type=submit] {
 }
 form.booking-form input[type=submit]:active {
   background: #ee9972;
-}
-form.booking-form input [type=date] {
-  -moz-appearance: textfield;
-  -webkit-appearance: none;
-}
-form.booking-form input[type=date]::-webkit-calendar-picker-indicator,
-form.booking-form input[type=time]::-webkit-calendar-picker-indicator {
-  background: none;
-  bottom: 0;
-  color: transparent;
-  cursor: pointer;
-  height: auto;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: auto;
-}
-form.booking-form input[type=date]::-webkit-datetime-edit,
-form.booking-form input[type=time]::-webkit-datetime-edit {
-  text-align: center;
-  width: 100%;
 }
 
 @media screen and (min-width: 1281px) {
@@ -1032,6 +1013,10 @@ form.booking-form input[type=time]::-webkit-datetime-edit {
     top: 0;
     left: 0;
     border-radius: 0;
+  }
+  .reservations {
+    flex-direction: column;
+    gap: 20px;
   }
 }
 @media screen and (max-width: 350px) {
