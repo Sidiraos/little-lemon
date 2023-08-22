@@ -1,4 +1,5 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState } from 'react';
+import useDateValidation from '../customHooks/useDateValidation';
 
 
 
@@ -8,81 +9,23 @@ const BookingForm = React.forwardRef((props , ref) => {
 	const [occasions , setOccasions] = useState(optionsOccasions[1]);
 	const [time, setTime] = useState(hours[1]);
 	const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
-	const [warning , setWarning] = useState('');
-	const [disabled , setDisabled] = useState(false);
 	const [guests , setGuests]  = useState('');
 
 	console.log("Booking Form is rendered")
 
+	const { warning, disabled } = useDateValidation(date);
+	const slots = props.slots;
+	const reservation = slots.find(item => item.date === date); 
+	console.log(reservation);
+	const availableSlots = reservation ? reservation.availableSlots : 0;
+	console.log(availableSlots)
 
-	useEffect(()=> {
-		console.log(date);
-		const userDateYear = parseInt(date.slice(0,4));
-		const userDateMonth =  parseInt(date.slice(5,7));
-		const userDateDay =  parseInt(date.slice(8,10));
-		// console.log(parseInt(userDateYear));
-		// console.log(parseInt(userDateMonth));
-		// console.log(parseInt(userDateDay));
-
-		const currentYear =  parseInt(new Date().toISOString().slice(0,4))
-		const currentMonth =  parseInt(new Date().toISOString().slice(5,7))
-		const currentDay =  parseInt(new Date().toISOString().slice(8,10))
-		// console.log(currentYear);
-		// console.log(currentMonth);
-		// console.log(currentDay);
-
-		if(userDateYear < currentYear) {
-			setWarning('Please select a current year not an anterior year');
-			setDisabled(true);
-		} 
-		else if (userDateYear > currentYear){
-			setWarning('Please select only a current year not a futur year');
-			setDisabled(true);
-
-		} 
-		else {
-			if (userDateMonth < currentMonth) 
-			{
-				setWarning('Please select a current month or a futur month');
-				setDisabled(true);
-			} 
-			else if (userDateMonth > currentMonth) 
-			{
-				setWarning('')
-				setDisabled(false);
-				if(userDateMonth - currentMonth >= 3)
-				{
-					setWarning('Please select a date less than 3 months from today')
-					setDisabled(true);
-				}
-			} 
-			else 
-			{
-				if (userDateDay < currentDay) 
-				{
-					setWarning('Please select a current day or a futur day');
-					setDisabled(true);
-				} else if (userDateDay === currentDay) {
-					setWarning('');
-					setDisabled(false);
-				}
-				else {
-					setWarning('');
-					setDisabled(false);
-				}
-
-			}
-			
-		}
-
-	} , [date]);
-
+	const dynamicBtnSubmitBtnWithDisabled =  <input type="submit" value="Make Your reservation" disabled = {disabled}/> ;
+	const dynamicBtnWithNoAvailableSlots = <input type="submit" value="No slot available" disabled = {true}/>
 	const handleSubmit = (e)=> {
 		e.preventDefault();
 		props.handleSlots(date);
-		setDate(new Date().toISOString().slice(0, 10));
 		setTime(hours[1]);
-		setGuests('');
 		setOccasions(optionsOccasions[1]);
 	}
 
@@ -129,8 +72,7 @@ const BookingForm = React.forwardRef((props , ref) => {
 					<option value={occasion} key={index}>{occasion}</option>
 				))}
 			</select>
-
-			<input type="submit" value="Make Your reservation" disabled = {disabled}/>
+			{reservation ? reservation.availableSlots === "No Slot available" ? dynamicBtnWithNoAvailableSlots : dynamicBtnSubmitBtnWithDisabled : dynamicBtnSubmitBtnWithDisabled}
 		</form>
 	);
 })

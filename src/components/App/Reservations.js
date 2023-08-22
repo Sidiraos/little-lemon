@@ -8,8 +8,8 @@ function Reservations() {
     const [defined , setDefined] = useState(false);
 
 	useEffect(() => {
-        console.log('I am useEffect')
-		console.log("current date in useRef" , dateRef.current.value);
+        console.log('I am useEffect of reservations component')
+		console.log("current date in useRef in useEffect of reservation component" , dateRef.current.value);
         setDefined(true);
 	}, [defined]);
 
@@ -27,11 +27,11 @@ function Reservations() {
         switch(action.type) {
             case 'update_reservation' :
                 const updatedState = state.map(reservation => {
-                    if (reservation.date === action.date) {
+                    if (reservation.date === action.date && reservation.availableSlots > 0) {
                       return {
                         ...reservation,
                         reservedSlots: reservation.reservedSlots + 1,
-                        availableSlots: reservation.availableSlots - 1
+                        availableSlots: reservation.availableSlots - 1 === 0 ? 'No Slot available'  : reservation.availableSlots - 1
                       };
                     }
                     return reservation;
@@ -77,7 +77,7 @@ function Reservations() {
 	return (
 		<div className='reservations'>
             {defined && <BookingSlot date={dateRef.current.value} slots = {state} defaultSlot={[totalSlotCount , reservedSlotCount]}  />}
-			<BookingForm ref={dateRef} handleSlots = {handleSlots} updateRefDateValue={updateRefDateValue} />
+			<BookingForm ref={dateRef} handleSlots = {handleSlots} updateRefDateValue={updateRefDateValue} slots = {state}/>
 		</div>
 	);
 }
