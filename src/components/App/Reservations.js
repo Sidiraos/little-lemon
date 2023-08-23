@@ -1,6 +1,7 @@
 import React, { useRef, useReducer, useEffect , useState } from 'react';
 import BookingForm from './BookingForm';
 import BookingSlot from './BookingSlot';
+import SubmitInfo from './SubmitInfo';
 
 function Reservations() {
     console.log('reservations is rendered')
@@ -81,8 +82,9 @@ function Reservations() {
 
 	return (
 		<div className='reservations'>
-            {defined && <BookingSlot date={dateRef.current.value} slots = {state} defaultSlot={[totalSlotCount , reservedSlotCount]} submitData = {submitData}  />}
+            {defined && <BookingSlot date={dateRef.current.value} slots = {state} defaultSlot={[totalSlotCount , reservedSlotCount]} />}
 			<BookingForm ref={dateRef} handleSlots = {handleSlots} updateRefDateValue={updateRefDateValue} slots = {state} getSubmitedData = {getSubmitedData}/>
+            {/* <SubmitInfo submitData = {submitData} /> */}
 		</div>
 	);
 }

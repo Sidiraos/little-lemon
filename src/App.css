@@ -788,9 +788,12 @@ form.form-footer input[type=submit]:active {
 
 .reservations {
   display: flex;
-  flex-direction: row-reverse;
   gap: 30px;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #333333;
+  position: relative;
 }
 
 form.booking-form {
@@ -803,6 +806,8 @@ form.booking-form {
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  background: #edefee;
 }
 form.booking-form input {
   padding: 10px 10px;
@@ -859,6 +864,32 @@ form.booking-form input[type=submit] {
 }
 form.booking-form input[type=submit]:active {
   background: #ee9972;
+}
+
+.booking-slot {
+  padding: 20px;
+  background: #edefee;
+  color: #333333;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.submit-info {
+  margin-top: 50px;
+}
+.submit-info h1 {
+  font-family: "Markazi Text", serif;
+  font-size: clamp(16px, 5vw, 30px);
+  line-height: inherit;
+  font-family: "Helvetica Neue";
+}
+.submit-info ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
 }
 
 @media screen and (min-width: 1281px) {
@@ -986,6 +1017,9 @@ form.booking-form input[type=submit]:active {
   }
   .footer-bloc-2-child-2 {
     margin-left: 0;
+  }
+  .booking-form {
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 640px) {

@@ -1,12 +1,10 @@
 import React from 'react'
 
-function BookingSlot({date: valueOfInputDate , slots , defaultSlot , submitData}) {
+function BookingSlot({date: valueOfInputDate , slots , defaultSlot}) {
   const [defaultTotalSlotCount , defaultReservedSlotCount] = defaultSlot;
   const reservation = slots.find(item => item.date === valueOfInputDate);
   console.log(valueOfInputDate)
   console.log(reservation)
-  console.log(submitData)
-
   const specifiedDate = ()=>{
     const today = new Date().toISOString().slice(0, 10);
 	const userDateDay =  parseInt(valueOfInputDate.slice(8,10));
@@ -28,39 +26,24 @@ function BookingSlot({date: valueOfInputDate , slots , defaultSlot , submitData}
 
   return (
     <div className='booking-slot'>
-      {
+{
         reservation ? (
           <div className='reservation-info'>
-            <h1>Date : {specifiedDate()} {reservation.date } </h1>
-            <h2>Total of Slots : {reservation.totalSlot  }</h2>
-            <h2>Available Slots : {reservation.availableSlots  } </h2>
-            <h2>Reserved Slots  : {reservation.reservedSlots}</h2>
+            <p>Date : <b>{specifiedDate()} {reservation.date }</b>  </p>
+            <p>Total of Slots : <b>{reservation.totalSlot  }</b> </p>
+            <p>Available Slots : <b>{reservation.availableSlots  } </b></p>
+            <p>Reserved Slots  : <b>{reservation.reservedSlots}</b> </p>
           </div>
         ) : (
           <div className='reservation-info'>
-          <h1>Date : {specifiedDate()} {valueOfInputDate } </h1>
-          <h2>Total of Slots : {defaultTotalSlotCount }</h2>
-          <h2>Available Slots : {defaultTotalSlotCount  } </h2>
-          <h2>Reserved Slots  : {defaultReservedSlotCount}</h2>
+          <p>Date : <b>{specifiedDate()} {valueOfInputDate}</b>  </p>
+          <p>Total of Slots : <b>{defaultTotalSlotCount}</b> </p>
+          <p>Available Slots : <b>{defaultTotalSlotCount} </b> </p>
+          <p>Reserved Slots  : <b>{defaultReservedSlotCount}</b> </p>
         </div>
 
         )
       }
-
-      {
-        submitData.length > 0 && (
-          <div className='submit-info'>
-            <h1>Thank you for your reservation</h1>
-            <ul>
-              {submitData.map((item , index) => <li key={index}>{item}</li>)}
-            </ul>
-
-          </div>
-
-        
-        )
-      }
-
     </div>
   )
 }

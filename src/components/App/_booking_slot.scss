@@ -1,0 +1,25 @@
+.booking-slot {
+    padding: 20px;
+    background: $highlightColor1;
+    // border-radius: 10px;
+    // box-shadow: 1px 0px 10px #20262e;
+    color : $highlightColor2;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.submit-info {
+    margin-top: 50px;
+    h1 {
+      @include font($fontTitle , clamp(16px , 5vw , 30px) , inherit);
+      font-family: "Helvetica Neue";
+    }
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 10px;
+    }
+  }

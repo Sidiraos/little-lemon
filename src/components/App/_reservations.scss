@@ -1,8 +1,11 @@
 .reservations {
     display: flex;
-    flex-direction: row-reverse;
     gap: 30px;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: $highlightColor2;
+    position: relative;
 }
 
 

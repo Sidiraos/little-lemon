@@ -92,6 +92,10 @@ a {
 	@import './components/Main/main_md';
 	@import './components/Footer/footer_md';
 
+	.booking-form {
+		flex-direction: column;
+	}
+
 }
 // 2xs
 @media screen and (max-width: 640px) {
