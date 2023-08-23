@@ -61,7 +61,7 @@ const BookingForm = React.forwardRef((props, ref) => {
 	return (
 		<form className="booking-form" onSubmit={handleSubmit}>
 			{isConfirmed ? (
-				<HasBeenConfirmed />
+				<HasBeenConfirmed data-testid="confirmation-component" />
 			) : (
 				<>
 					<label htmlFor="res-date">Choose date</label>
