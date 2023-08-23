@@ -791,9 +791,9 @@ form.form-footer input[type=submit]:active {
   gap: 30px;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding-top: 30px;
   background-color: #333333;
-  position: relative;
 }
 
 form.booking-form {
@@ -869,10 +869,9 @@ form.booking-form input[type=submit]:active {
 .booking-slot {
   padding: 20px;
   background: #edefee;
+  border-radius: 10px;
+  box-shadow: 1px 0px 10px #20262e;
   color: #333333;
-  position: absolute;
-  right: 0;
-  top: 0;
 }
 
 .submit-info {
@@ -1042,15 +1041,14 @@ form.booking-form input[type=submit]:active {
   }
   form.booking-form {
     position: relative;
-    transform: translate(0);
+    margin-top: 0;
     gap: 10px;
-    top: 0;
-    left: 0;
     border-radius: 0;
   }
   .reservations {
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
+    justify-content: flex-start;
   }
 }
 @media screen and (max-width: 350px) {

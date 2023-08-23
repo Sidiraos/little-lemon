@@ -129,15 +129,14 @@ a {
 
 	form.booking-form {
 		position: relative;
-		transform: translate(0);
+		margin-top: 0;
 		gap: 10px;
-		top: 0;
-		left: 0;
 		border-radius: 0;
 	}
 	.reservations {
 		flex-direction: column;
-		gap: 20px;
+		gap: 10px;
+		justify-content: flex-start;
 	}
 
 }
