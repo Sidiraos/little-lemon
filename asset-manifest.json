@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/little-lemon/static/css/main.971d6830.css",
+    "main.css": "/little-lemon/static/css/main.27326c53.css",
     "main.js": "/little-lemon/static/js/main.14a9a1e9.js",
     "static/js/328.b09aa2ee.chunk.js": "/little-lemon/static/js/328.b09aa2ee.chunk.js",
     "static/js/787.01cfcb08.chunk.js": "/little-lemon/static/js/787.01cfcb08.chunk.js",
@@ -18,13 +18,13 @@
     "static/media/profile1.jpg": "/little-lemon/static/media/profile1.7dfa22b3c413eefe4a56.jpg",
     "index.html": "/little-lemon/index.html",
     "static/media/person-biking-solid.svg": "/little-lemon/static/media/person-biking-solid.3a71f4fb807a556c7d17d1e221084410.svg",
-    "main.971d6830.css.map": "/little-lemon/static/css/main.971d6830.css.map",
+    "main.27326c53.css.map": "/little-lemon/static/css/main.27326c53.css.map",
     "main.14a9a1e9.js.map": "/little-lemon/static/js/main.14a9a1e9.js.map",
     "328.b09aa2ee.chunk.js.map": "/little-lemon/static/js/328.b09aa2ee.chunk.js.map",
     "787.01cfcb08.chunk.js.map": "/little-lemon/static/js/787.01cfcb08.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.971d6830.css",
+    "static/css/main.27326c53.css",
     "static/js/main.14a9a1e9.js"
   ]
 }
