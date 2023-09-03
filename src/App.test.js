@@ -2,13 +2,9 @@ import {
 	render,
 	screen,
 	fireEvent,
-	waitFor,
-	MemoryRouter,
 } from '@testing-library/react';
 import App from './App';
 import React from 'react';
-import Reservations from './components/App/Reservations';
-import BookingSlot from './components/App/BookingSlot';
 import BookingForm from './components/App/BookingForm';
 
 test('renders learn react link', () => {

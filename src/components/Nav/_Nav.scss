@@ -31,10 +31,13 @@ nav {
 
 }
 .nav-link {
-    transition: color 300ms ease-in;
+    transition: color 200ms ease-in;
     &:hover {
         color : $primaryColor1;
     }
+}
+.nav-link.active {
+    color: $secondaryColor1;
 }
 @import './HamburgerMenu.scss';
 

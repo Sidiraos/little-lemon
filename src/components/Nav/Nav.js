@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink , Link } from 'react-router-dom';
 import logo from './Logo.svg';
 import HamburgerMenu from './HamburgerMenu';
 import { NavItem } from '../contexts/MyContext';
@@ -10,9 +10,9 @@ function Nav() {
 	const itemsNav = navItem.map((item, index) => {
 		return (
 			<li className="nav-item" key={index}>
-				<Link className="nav-link" to={`/${item}`}>
+				<NavLink className="nav-link" to={`/${item}`}>
 					{item}
-				</Link>
+				</NavLink>
 			</li>
 		);
 	});
